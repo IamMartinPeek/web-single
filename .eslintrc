@@ -1,0 +1,6 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "no-console": "off" // to disable warnings when logging to console
+  }
+}
