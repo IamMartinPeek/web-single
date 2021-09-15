@@ -22,7 +22,7 @@ jobs: # define jobs to run
       # deploy site to netlify using secrets created on repository
       - uses: netlify/actions/cli@master # This Action enables arbitrary actions with the Netlify CLI
         env: # environment variables used for netlify action
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_API_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.APIID }}
         with: # A map of the input parameters defined by the action. Each input parameter is a key/value pair. 
           args: deploy --dir=dist --prod
