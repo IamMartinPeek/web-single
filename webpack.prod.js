@@ -7,7 +7,7 @@ module.exports = {
   // Use the src/index.js file as entry point to bundle it.
   // If the src/index.js file imports other JS files,
   // bundle them as well
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: path.resolve(__dirname, './src/index.ts'),
   // 2
   // The bundles source code files shall result in a bundle.js file
   // in the /dist folder
@@ -23,11 +23,11 @@ module.exports = {
   },
 // 4
   // Add plugins for webpack here
-  plugins: [
+    plugins: [
     new HtmlWebpackPlugin({
       title: "Basic Webpack Setup",
       template: path.resolve(__dirname, './src/index.html'),
-    })
+    }),
   ],
 module: {
     // configuration regarding modules
@@ -49,6 +49,6 @@ module: {
   },
   resolve: {
     // options for resolving module requests
-    extensions: ['*', '.js']  // files to load
+    extensions: ['*', '.ts', '.js']  // files to load
   }
 };
