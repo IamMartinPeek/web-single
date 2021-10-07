@@ -1,6 +1,5 @@
 import './styles/style.scss';
 import './contents/contents';
-import loadCat from './contents/contents'
 
 console.log("ich bin da");
 
