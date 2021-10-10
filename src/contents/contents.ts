@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { Dogs } from '../models/dogs'
 
-document.getElementById('dogLoad').addEventListener('click', loadDogs);
-
-export default function loadDogs() {
+export function loadDogs() {
   console.log("test");
 
   axios.get(`https://dog.ceo/api/breeds/image/random/8`).then(response => {
     const dogs: Dogs = response.data;
+
+    document.getElementById('dog-container').innerHTML = "";
 
     dogs.message.forEach((url, index) => {
       const id: string = Date.now().toString() + index;
@@ -30,4 +30,8 @@ export default function loadDogs() {
     document.getElementById(`${id}`).remove();
   }
 
+}
+
+export default function setListener() {
+  document.getElementById('dogLoad').addEventListener('click', loadDogs);
 }
